@@ -1,0 +1,9 @@
+WD.COM: WD.OBJ
+    TLINK /t WD.OBJ
+WD.OBJ: WD.ASM
+    TASM WD.ASM
+
+CLEAN:
+    DEL WD.COM
+    DEL WD.OBJ
+    DEL WD.MAP
