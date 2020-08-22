@@ -133,7 +133,7 @@ GOTSR:
     MOV DX,OFFSET ENDTSRCODE    ; END OF CODE
     SUB DX,OFFSET ENTRY         ; BEGINNING OF CODE
     ADD DX,100H                 ; PSP SEGMENT
-    ADD DX,10H                  ; PADDING FOR DIVISION
+    ADD DX,0FH                  ; PADDING FOR DIVISION
     SHR DX,04H                  ; DIVIDE BY 16
 
     MOV AH,31H
