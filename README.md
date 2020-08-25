@@ -20,6 +20,7 @@ Software is written in x86 assembly, assembled with Borland Turbo Assembler.
 copy of Borland Turbo Assembler (Don't forget to add the `bin` directory to
 your `PATH` environment variable).
 - Change directory to the source directory and run `make`.
+- Edit `BOOT.BAT` to adjust your watchdog timeout.
 - Edit `C:\AUTOEXEC.BAT` to add your watchdog driver boot script,
-eg: `C:\PCA6155V\BOOT.BAT`
+eg: `CALL C:\PCA6155V\BOOT.BAT`
 - Reboot.
