@@ -63,6 +63,11 @@ INT98H:
     CMP AX,"RW"         ; RUN WATCHDOG
     JNE .S
 
+    CMP BL,00H
+    JE .E
+    CMP BL,3FH
+    JA .E
+
     MOV CS:TIME,BL
     MOV CS:TTICK,01H
 
@@ -72,11 +77,11 @@ INT98H:
     CMP AX,"SW"         ; STOP WATCHDOG
     JNE .B
 
-    MOV DX,[WORD PTR CS:PORT]
-    IN AL,DX
-
     MOV CS:TIME,00H
     MOV CS:TTICK,00H
+
+    MOV DX,[WORD PTR CS:PORT]
+    IN AL,DX
 
     JMP ENDINT98H
 .B:
@@ -84,11 +89,11 @@ INT98H:
     CMP AX,"RB"     ; REBOOT
     JNE .E
 
-    MOV DX,[WORD PTR CS:PORT]
-    IN AL,DX
-
     MOV CS:TIME,00H
     MOV CS:TTICK,00H
+
+    MOV DX,[WORD PTR CS:PORT]
+    IN AL,DX
 
     MOV AL,01H
     MOV DX,PORT
