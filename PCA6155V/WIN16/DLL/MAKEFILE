@@ -1,0 +1,61 @@
+# Generated with prj2mak
+.AUTODEPEND
+
+#               *Translator Definitions*
+CC = bcc +DLL6155.CFG
+TASM = tasm
+TLIB = tlib
+TLINK = tlink
+LIBPATH = D:\BC31\LIB
+INCLUDEPATH = D:\BC31\INCLUDE
+
+
+#               *Implicit Rules*
+.c.obj:
+  $(CC) -c {$< }
+
+.cpp.obj:
+  $(CC) -c {$< }
+
+#               *List Macros*
+
+
+EXE_dependencies =  \
+ dll6155.def \
+ dll6155.obj
+
+#               *Explicit Rules*
+dll6155.dll: dll6155.cfg $(EXE_dependencies)
+  $(TLINK) /v/x/c/P-/Twd/L$(LIBPATH) @&&|
+c0dc.obj+
+dll6155.obj
+dll6155.dll
+		# no map file
+mathwc.lib+
+import.lib+
+cwc.lib
+dll6155.def
+|
+#    dll6155.dll
+   
+
+#               *Individual File Dependencies*
+dll6155.obj: dll6155.cfg dll6155.c 
+
+#               *Compiler Configuration File*
+dll6155.cfg: makefile
+  copy &&|
+-R
+-mc!
+-2
+-v
+-WD
+-vi-
+-wpro
+-weas
+-wpre
+-I$(INCLUDEPATH)
+-L$(LIBPATH)
+| dll6155.cfg
+
+
